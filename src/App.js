@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import AddVideo from './components/AddVideo.js';
 import Displayer from './components/Displayer.js';
 import Title from './components/Title.js';
-import stylesheet from './components/stylesheet.css';
+//import stylesheet from './components/stylesheet.css';
 import MyWebcam from './components/MyWebcam.js';
 
 class App extends Component {
