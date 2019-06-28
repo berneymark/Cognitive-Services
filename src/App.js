@@ -3,7 +3,7 @@ import AddVideo from './components/AddVideo.js';
 import Displayer from './components/Displayer.js';
 import Title from './components/Title.js';
 //import stylesheet from './components/stylesheet.css';
-import MyWebcam from './components/MyWebcam.js';
+import EmotionAnalysis from './components/EmotionAnalysis.js';
 
 class App extends Component {
   constructor() {
@@ -25,7 +25,7 @@ class App extends Component {
     return (
       <div>
         <h1>
-          <MyWebcam/>
+          <EmotionAnalysis/>
         </h1>
         <Title title = {'Don\'t Laugh Challenge'}/>
         <AddVideo onAddVideo = {(addedPost) => {
@@ -38,5 +38,9 @@ class App extends Component {
     );
   }
 }
+
+/*
+
+*/
 
 export default App;

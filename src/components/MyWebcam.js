@@ -18,7 +18,7 @@ class MyWebcam extends React.Component {
             const image = this.webcam.getScreenshot();
             const byteArrayImage = this.convertToByteArray(image);
             this.fetchData(byteArrayImage);
-        }, 1000);
+        }, 200);
     }
 
     convertToByteArray = (image) => {
@@ -44,7 +44,7 @@ class MyWebcam extends React.Component {
                     if (this.isCapturing && happiness < 100) {
                         this.props.onReceivedResult(happiness);
                     } else {
-                        this.clearInterval(this.timerId);
+                        clearInterval(this.timerId);
                         this.isCapturing = false;
                         this.props.onReceivedResult(100);
                     }
