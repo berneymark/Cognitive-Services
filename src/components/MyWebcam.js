@@ -36,7 +36,20 @@ class MyWebcam extends React.Component {
             headers: {'cache-control': 'no-cache', 'Ocp-Apim-Subscription-Key': apiKey, 'Content-Type': 'application/octet-stream'},
             method: 'POST'
         }).then(response => {
-            console.log(response.status);
+            if (response.ok) {
+                response.json().then(data => {
+                    var happiness = (data[0] != null ? data[0].faceAttributes.emotion.happiness : 0);
+                    happiness = (Math.round(happiness * 100));
+
+                    if (this.isCapturing && happiness < 100) {
+                        this.props.onReceivedResult(happiness);
+                    } else {
+                        this.clearInterval(this.timerId);
+                        this.isCapturing = false;
+                        this.props.onReceivedResult(100);
+                    }
+                })
+            }
         })
     }
 
