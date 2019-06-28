@@ -24,9 +24,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>
-          <EmotionAnalysis/>
-        </h1>
         <Title title = {'Don\'t Laugh Challenge'}/>
         <AddVideo onAddVideo = {(addedPost) => {
           this.addVideo(addedPost);
@@ -34,6 +31,9 @@ class App extends Component {
         <div className = "video-wrapper">
           <Displayer posts = {this.state.posts}/>
         </div>
+        <h1>
+          <EmotionAnalysis/>
+        </h1>
       </div>
     );
   }

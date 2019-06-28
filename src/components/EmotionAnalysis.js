@@ -1,14 +1,19 @@
 import React from 'react';
 import { useState } from 'react';
 import MyWebcam from './MyWebcam.js';
+import Draggable from 'react-draggable';
 
 function EmotionAnalysis() {
     const [result, updateResult] = useState(0);
     
     return (
         <div>
-            <MyWebcam onReceivedResult = {updateResult}/>
-            <Result result = {result}/>
+            <Draggable>
+                <div>
+                    <MyWebcam onReceivedResult = {updateResult}/>
+                    <Result result = {result}/>
+                </div>
+            </Draggable>
         </div>
     )
 }
